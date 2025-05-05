@@ -1,6 +1,7 @@
 import TypewriterTitle from "./_components/TypewriterTitle.js";
 import GitHubCalendar from "react-github-calendar";
 import React from "react";
+import WakatimeDiv from "./_components/WakatimeDiv.js";
 
 export default function Home() {
   return (
@@ -31,7 +32,19 @@ export default function Home() {
               fontSize={12}
             />
           } className="basis-192" title = "GitHub Contributions"/>
-          <DivCreator content="rawr" className="basis-64" />
+          <DivCreator content={
+            <>
+              <WakatimeDiv/>
+            </>
+          } className="basis-64" title="Coding Statistics"/>
+        </div>
+        <div className="flex flex-row items-center justify-around w-full">
+          <DivCreator content={
+            <>
+              By me a coffee <br/>
+              Or a bubble tea! <br/>
+            </>
+          } className="basis-64" title="Support Me!"/>
         </div>
       </div>
     </div>
