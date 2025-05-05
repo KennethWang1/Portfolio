@@ -1,4 +1,7 @@
 import TypewriterTitle from "./_components/TypewriterTitle.js";
+import GitHubCalendar from "react-github-calendar";
+import React from "react";
+
 export default function Home() {
   return (
     <div className="flex flex-col">
@@ -19,8 +22,16 @@ export default function Home() {
             } className="basis-256" title="About Me"/>
         </div>
         <div className="flex flex-row items-center justify-around w-full">
-          <DivCreator content="rawr" className="" />
-          <DivCreator content="rawr" className="" />
+          <DivCreator content={
+            <GitHubCalendar
+              username="KennethWang1" // Replace with your GitHub username
+              blockSize={11}
+              blockMargin={3.66}
+              color="#1f77b4"
+              fontSize={12}
+            />
+          } className="basis-192" title = "GitHub Contributions"/>
+          <DivCreator content="rawr" className="basis-64" />
         </div>
       </div>
     </div>
@@ -29,7 +40,7 @@ export default function Home() {
 
 function DivCreator({ content, className , title = "" }) {
   return (
-    <div className= {`flex flex-col bg-medium rounded-md m-1 ${className}`}>
+    <div className= {`flex flex-col bg-medium rounded-md m-2 ${className}`}>
       <div className="flex flex-row items-left">
         <div className="bg-red-500 left-2 m-2 w-2 h-2 rounded-full"/>
         <div className="bg-green-500 w-2 h-2 m-2 ml-0 rounded-full"/>
@@ -39,9 +50,9 @@ function DivCreator({ content, className , title = "" }) {
         <h1 className="text-background text-2xl m-1 ml-1 ">
           {title}
         </h1>
-        <p className="flex w-full h-full m-1 mt-0 text-background">
+        <div className="flex w-full h-full m-1 mt-0 text-background">
           {content}
-        </p>
+        </div>
       </div>
     </div>
   );
