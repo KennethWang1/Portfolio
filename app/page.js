@@ -53,7 +53,7 @@ export default function Home() {
 
 function DivCreator({ content, className , title = "" }) {
   return (
-    <div className= {`flex flex-col bg-medium rounded-md m-2 ${className}`}>
+    <div className= {`flex flex-col bg-medium rounded-md m-2 ml-0 mr-0 ${className}`}>
       <div className="flex flex-row items-left">
         <div className="bg-red-500 left-2 m-2 w-2 h-2 rounded-full"/>
         <div className="bg-green-500 w-2 h-2 m-2 ml-0 rounded-full"/>
