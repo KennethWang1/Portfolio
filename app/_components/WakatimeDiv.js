@@ -18,8 +18,8 @@ export default function WakatimeDiv() {
         });
 
     return (
-        <>
+    <h2 className="text-3xl text-center">
         {time}
-        </>
+    </h2>
     );
 }
