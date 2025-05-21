@@ -14,9 +14,7 @@ export default function Projects() {
                         <ProjectDiv link = 'https://github.com/ohi-711/Rest' title = 'Rest' content = 'An AI music therepy site. Made with JavaScript, HTML, CSS, and Flask. The project also uses machine vision and OpenAI.'/>
                     </div>
                     <div className="flex flex-row items-center justify-center">
-                        <ProjectDiv/>
-                        <ProjectDiv/>
-                        <ProjectDiv/>
+                        
                     </div>
                 </div>
             </div>
