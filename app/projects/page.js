@@ -14,16 +14,6 @@ export default function Projects() {
                         <ProjectDiv link = 'https://github.com/KennethWang1/Wildlife-Go' title='Wildlife Go' content='A web-based wildlife photography game to encourage going outside. Made with Typescript, Tailwind, NextJs, NodeJs, and Firebase DB.'/>
                         <ProjectDiv link = 'https://github.com/ohi-711/Rest' title = 'Rest' content = 'An AI music therepy site. Made with JavaScript, HTML, CSS, and Flask. The project also uses machine vision and OpenAI.'/>
                     </div>
-                    <div className="flex flex-row flex-wrap items-center justify-center">
-                        <ProjectDiv link = 'https://github.com/KennethWang1/Portfolio' title = 'Portfolio' content = 'This website! Made with React, NextJS, and Tailwind CSS.'/>
-                        <ProjectDiv link = 'https://github.com/KennethWang1/Wildlife-Go' title='Wildlife Go' content='A web-based wildlife photography game to encourage going outside. Made with Typescript, Tailwind, NextJs, NodeJs, and Firebase DB.'/>
-                        <ProjectDiv link = 'https://github.com/ohi-711/Rest' title = 'Rest' content = 'An AI music therepy site. Made with JavaScript, HTML, CSS, and Flask. The project also uses machine vision and OpenAI.'/>
-                    </div>
-                    <div className="flex flex-row flex-wrap items-center justify-center">
-                        <ProjectDiv link = 'https://github.com/KennethWang1/Portfolio' title = 'Portfolio' content = 'This website! Made with React, NextJS, and Tailwind CSS.'/>
-                        <ProjectDiv link = 'https://github.com/KennethWang1/Wildlife-Go' title='Wildlife Go' content='A web-based wildlife photography game to encourage going outside. Made with Typescript, Tailwind, NextJs, NodeJs, and Firebase DB.'/>
-                        <ProjectDiv link = 'https://github.com/ohi-711/Rest' title = 'Rest' content = 'An AI music therepy site. Made with JavaScript, HTML, CSS, and Flask. The project also uses machine vision and OpenAI.'/>
-                    </div>
                 </div>
             </div>
             <Footer/>
