@@ -50,6 +50,11 @@ export default function Home() {
                 Or a bubble tea! <br/>
               </>
             } className="basis-64" title="Support Me!"/>
+            <DivCreator content = {
+              <>
+                Email: <a href = 'mailto:k3nn3th.wang@gmail.com'> k3nn3th.wang@gmail.com</a>
+              </>
+            } className="basis-64" title="Contact Me"/>
           </div>
         </div>
       </div>

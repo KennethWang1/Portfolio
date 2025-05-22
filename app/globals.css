@@ -70,7 +70,6 @@ body {
 
 html, body {
   overflow: auto;
-  scrollbar-width: none; /* For Firefox */
   scroll-behavior: smooth;
 }
 
