@@ -69,10 +69,20 @@ body {
 }
 
 html, body {
-  overflow: auto;
-  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--foreground) var(--background);
 }
 
 html::-webkit-scrollbar, body::-webkit-scrollbar {
-  display: none; /* For Chrome, Safari, and Edge */
+  width: 8px;
+  background: var(--background);
+}
+
+html::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb {
+  background: var(--light);
+  border-radius: 4px;
+}
+
+html::-webkit-scrollbar-thumb:hover, body::-webkit-scrollbar-thumb:hover {
+  background: var(--foreground);
 }
