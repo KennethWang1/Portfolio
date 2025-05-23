@@ -43,13 +43,18 @@ export default function Home() {
               <WakatimeDiv/>
             } className="basis-128 text-3xl" title="Programming Time"/>
           </div>
-          <div className="flex flex-row items-center justify-around w-full">
+          <div className="flex flex-row items-stretch justify-around w-full">
             <DivCreator content={
               <>
                 By me a coffee <br/>
                 Or a bubble tea! <br/>
               </>
-            } className="basis-64" title="Support Me!"/>
+            } className="basis-256" title="Support Me!"/>
+            <DivCreator content = {
+              <>
+                Email: <a href = 'mailto:k3nn3th.wang@gmail.com'> k3nn3th.wang@gmail.com</a>
+              </>
+            } className="basis-256" title="Contact Me"/>
           </div>
         </div>
       </div>
