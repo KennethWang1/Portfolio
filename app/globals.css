@@ -21,7 +21,7 @@
   }
 }
 */
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 @import "tailwindcss";
 
 :root {
@@ -46,10 +46,21 @@
   }
 }
 
+html, body {
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  scroll-behavior: smooth;
+  height: 100%;
+  min-height: 100vh;
+}
+
 body {
-  background: var(--background);
+  @apply font-sans;
+  background: transparent; /* Let Vanta handle the background */
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-anchor: none; /* Prevent scroll anchoring issues */
 }
 
 .cursor {
@@ -85,4 +96,34 @@ html::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb {
 
 html::-webkit-scrollbar-thumb:hover, body::-webkit-scrollbar-thumb:hover {
   background: var(--foreground);
+}
+
+/* Potential Vanta canvas override - try to force line colors */
+canvas[data-vanta-canvas] {
+  filter: hue-rotate(0deg) !important;
+  mix-blend-mode: normal !important;
+}
+
+/* Header gradient fallback */
+header.gradient-header {
+  background: linear-gradient(to bottom, var(--color-background) 0%, var(--color-background) 70%, transparent 100%);
+}
+
+/* Prevent over-scrolling and bouncing */
+html {
+  overscroll-behavior: none;
+  scroll-behavior: smooth;
+}
+
+/* Ensure main content fills viewport and prevents over-scroll */
+#main {
+  min-height: 100vh;
+  position: relative;
+  overscroll-behavior: none;
+}
+
+/* Additional constraint for the entire page */
+body {
+  overscroll-behavior-y: none;
+  -webkit-overflow-scrolling: touch;
 }
