@@ -10,10 +10,10 @@ export default function Home() {
     <>
       <Header/>
       <div className="flex flex-col">
-        <div className="flex w-full h-screen justify-center items-center">
+        <div className="flex w-full justify-center items-center" style={{ height: 'calc(100vh - 5rem)' }}>
           <TypewriterTitle
             text="Hello&#128075; I'm Kenneth!"
-            className="relative text-foreground text-6xl left 2.5 m-3 align-middle"
+            className="relative text-foreground text-6xl h-10 w-200 text-center p-2.5 m-10 mt-0 align-middle"
           />
         </div>
 
@@ -35,8 +35,11 @@ export default function Home() {
                 username="KennethWang1"
                 blockSize={12}
                 blockMargin={4}
-                color="#1f77b4"
                 fontSize={12}
+                colorScheme="light"
+                theme={{
+                  light: ['#3a2f6b','#77f07f'],
+                }}
               />
             } className="basis-384" title = "GitHub Contributions"/>
             <DivCreator content={
@@ -65,15 +68,15 @@ export default function Home() {
 
 function DivCreator({ content, className, title = "" }) {
   return (
-    <div className={`flex flex-col bg-medium rounded-md m-2 h-auto flex-grow ${className}`}>
+    <div className={`flex flex-col bg-blue-950 border-green-100 border-1 rounded-md m-2 h-auto flex-grow ${className}`}>
       <div className="flex flex-row items-left">
         <div className="bg-red-500 left-2 m-2 w-2 h-2 rounded-full" />
         <div className="bg-green-500 w-2 h-2 m-2 ml-0 rounded-full" />
         <div className="bg-yellow-500 w-2 h-2 m-2 ml-0 rounded-full" />
       </div>
-      <div className={`flex flex-col m-1 mt-0 bg-cyan-100 rounded flex-grow`}>
-        <h1 className="text-background text-4xl m-1 ml-1">{title}</h1>
-        <div className="flex w-full h-full m-1 mt-0 text-background text-xl flex-grow">
+      <div className={`flex flex-col m-1 mt-0 bg-transparent rounded flex-grow text-green-50`}>
+        <h1 className="text-4xl m-1 ml-1">{title}</h1>
+        <div className="flex w-full h-full m-1 mt-0 text-xl flex-grow">
           {content}
         </div>
       </div>

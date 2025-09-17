@@ -24,6 +24,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 @import "tailwindcss";
 
+/* Prevent white flash - applied immediately */
+html {
+  background-color: #3a2f6b;
+  transition: background-color 0.5s ease-out;
+}
+
+/* Allow Vanta to show through once loaded */
+html.vanta-loaded {
+  background-color: transparent;
+}
+
 :root {
   --background: #3a2f6b;
   --foreground: #77f07f;
@@ -51,11 +62,12 @@ html, body {
   scroll-behavior: smooth;
   height: 100%;
   min-height: 100vh;
+  background-color: var(--color-background); /* Prevent white flash */
 }
 
 body {
   @apply font-sans;
-  background: transparent; /* Let Vanta handle the background */
+  background-color: var(--color-background); /* Show background color while Vanta loads */
   color: var(--foreground);
   font-family: 'Roboto', Helvetica, sans-serif;
   margin: 0;

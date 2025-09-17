@@ -59,7 +59,13 @@ const VantaBackground = ({ children }) => {
         });
         
         setVantaEffect(effect);
-        setIsLoading(false);
+        
+        // Clear backgrounds once Vanta is loaded to prevent interference
+        setTimeout(() => {
+          document.body.style.backgroundColor = 'transparent';
+          document.documentElement.classList.add('vanta-loaded');
+          setIsLoading(false);
+        }, 200);
       }
     } catch (error) {
       console.error('Failed to load Vanta:', error);
@@ -90,7 +96,23 @@ const VantaBackground = ({ children }) => {
 
   return (
     <>
-      {/* Fallback background that shows while Vanta is loading */}
+      {/* Vanta background container - always rendered */}
+      <div 
+        ref={vantaRef} 
+        style={{ 
+          width: '100%', 
+          height: '100vh',
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          zIndex: -2,
+          backgroundColor: '#3a2f6b', // Fallback color if Vanta fails
+          opacity: !isLoading ? 1 : 0.3, // Slight visibility even while loading
+          transition: 'opacity 1s ease-in-out'
+        }}
+      />
+      
+      {/* Loading overlay that fades out */}
       {isLoading && (
         <div 
           style={{ 
@@ -100,29 +122,15 @@ const VantaBackground = ({ children }) => {
             top: 0,
             left: 0,
             zIndex: -1,
-            background: 'linear-gradient(135deg, #3a2f6b 0%, #2a1f5b 100%)',
-            opacity: isLoading ? 1 : 0,
-            transition: 'opacity 0.5s ease-in-out'
+            backgroundColor: '#3a2f6b',
+            opacity: 1,
+            transition: 'opacity 0.8s ease-out',
+            pointerEvents: 'none'
           }}
         />
       )}
       
-      {/* Vanta background container */}
-      <div 
-        ref={vantaRef} 
-        style={{ 
-          width: '100%', 
-          height: '100vh',
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          zIndex: -1,
-          opacity: !isLoading ? 1 : 0,
-          transition: 'opacity 0.5s ease-in-out'
-        }}
-      >
-        {children}
-      </div>
+      {children}
     </>
   );
 };
