@@ -4,7 +4,7 @@ export default function Resume() {
             <embed
                 src="/KennethWang-Resume.pdf"
                 type="application/pdf"
-                className="border-none bg-none overflow-hidden w-full h-screen"
+                className="border-none bg-none overflow-hidden w-screen md:w-full h-screen"
             />
         </div>
     );
