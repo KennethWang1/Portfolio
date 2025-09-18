@@ -17,8 +17,8 @@ export default function Home() {
           />
         </div>
 
-        <div className="relative flex flex-col w-full min-h-screen">
-          <div className="flex flex-row items-stretch justify-around w-full">
+        <div className="relative flex flex-col w-full min-h-screen px-4 md:px-8 max-w-full overflow-x-hidden">
+          <div className="flex flex-col md:flex-row md:items-stretch justify-around w-full gap-4 md:gap-2">
             <DivCreator content={
               <>
                 Nice to meet you! My name is Kenneth, and I am a high school student at William Lyon Mackenzie. I am from Canada, and I currently live in Toronto. In my spare time, I enjoy working on various projects (which you can see on my GitHub). 
@@ -27,9 +27,14 @@ export default function Home() {
                 <br/><br/>
                 Outside of programming, I am the captain of Team Drop Table, a top-five CyberPatriot team in Canada. I also play baseball for the Scarborough Stringers. 
               </>
-              } className="basis-512" title="About Me"/>
+              } className="w-full md:basis-512" title="About Me"/>
+              <DivCreator content={
+                <>
+
+                </>
+              } className="w-full md:basis-128" title="Contact Me"/>
           </div>
-          <div className="flex flex-row items-stretch justify-around w-full">
+          <div className="flex flex-col md:flex-row md:items-stretch justify-around w-full gap-4 md:gap-2">
             <DivCreator content={
               <GitHubCalendar
                 username="KennethWang1"
@@ -41,23 +46,10 @@ export default function Home() {
                   light: ['#3a2f6b','#77f07f'],
                 }}
               />
-            } className="basis-384" title = "GitHub Contributions"/>
+            } className="w-full md:basis-256 hidden md:block" title = "GitHub Contributions"/>
             <DivCreator content={
               <WakatimeDiv/>
-            } className="basis-128 text-3xl" title="Programming Time"/>
-          </div>
-          <div className="flex flex-row items-stretch justify-around w-full">
-            <DivCreator content={
-              <>
-                By me a coffee <br/>
-                Or a bubble tea! <br/>
-              </>
-            } className="basis-256" title="Support Me!"/>
-            <DivCreator content = {
-              <>
-                Email: <a href = 'mailto:k3nn3th.wang@gmail.com'> k3nn3th.wang@gmail.com</a>
-              </>
-            } className="basis-256" title="Contact Me"/>
+            } className="w-full md:basis-128 text-3xl" title="Programming Time"/>
           </div>
         </div>
       </div>
@@ -68,15 +60,15 @@ export default function Home() {
 
 function DivCreator({ content, className, title = "" }) {
   return (
-    <div className={`flex flex-col bg-blue-950 border-green-100 border-1 rounded-md m-2 h-auto flex-grow ${className}`}>
+    <div className={`flex flex-col bg-blue-950 border-green-100/[0.9] border-1 rounded-md m-1 md:m-2 h-auto flex-grow min-w-0 max-w-full overflow-hidden ${className}`}>
       <div className="flex flex-row items-left">
         <div className="bg-red-500 left-2 m-2 w-2 h-2 rounded-full" />
         <div className="bg-green-500 w-2 h-2 m-2 ml-0 rounded-full" />
         <div className="bg-yellow-500 w-2 h-2 m-2 ml-0 rounded-full" />
       </div>
-      <div className={`flex flex-col m-1 mt-0 bg-transparent rounded flex-grow text-green-50`}>
-        <h1 className="text-4xl m-1 ml-1">{title}</h1>
-        <div className="flex w-full h-full m-1 mt-0 text-xl flex-grow">
+      <div className={`flex flex-col m-1 mt-0 bg-transparent rounded flex-grow text-green-50/[0.9] overflow-hidden`}>
+        <h1 className="text-xl md:text-4xl m-1 ml-1 break-words hyphens-auto overflow-wrap-anywhere">{title}</h1>
+        <div className="flex flex-col w-full h-full m-1 mt-0 text-base md:text-xl flex-grow overflow-hidden break-words hyphens-auto overflow-wrap-anywhere leading-relaxed">
           {content}
         </div>
       </div>
