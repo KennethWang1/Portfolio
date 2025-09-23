@@ -36,7 +36,7 @@ function ProjectDiv({content, link, img = "https://placehold.co/800x500", title 
             </div>
             <img src={img} alt="Project Image" className='rounded-lg top-0'/>
             <div className='w-full h-40 bg-transparent mt-4 mb-4 rounded-lg overflow-hidden flex flex-col items-center'>
-                <a href = {link} rel="noopener noreferrer" target="_blank" className='text-green-50 relative w-fit underline decoration-green-50 text-center pl-2 text-background text-2xl overflow-hidden'>{title}</a>
+                <a href = {link} rel="noopener noreferrer" target="_blank" className='text-green-50 relative w-fit underline decoration-green-50 text-center pl-2 text-2xl overflow-hidden'>{title}</a>
                 <p className='text-green-50 pl-2 pr-2'>
                     {content}
                 </p>
