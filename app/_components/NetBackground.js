@@ -1,9 +1,9 @@
 'use client';
 import { useEffect, useRef, useState, useCallback } from 'react';
 
-const dots = 200;
+let dots = 200;
 const ldist = 200;
-const mouseInfluenceRadius = 300; // Maximum distance for mouse influence
+const mouseInfluenceRadius = 300;
 let points = [];
 
 const NetBackground = ({ children }) => {
@@ -20,6 +20,7 @@ const NetBackground = ({ children }) => {
     
     const ctx = canvas.getContext("2d");
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    dots = Math.floor((canvas.width + canvas.height) / 15);
 
     const mouse = mouseRef.current;
 
@@ -141,7 +142,6 @@ const NetBackground = ({ children }) => {
 
   return (
     <>
-      {/* Canvas for points */}
       <canvas
         ref={canvasRef}
         style={{
@@ -150,25 +150,10 @@ const NetBackground = ({ children }) => {
           left: 0,
           width: '100%',
           height: '100%',
-          zIndex: 0, // Changed from -1 to 0 to ensure it's above the background div
+          zIndex: 0,
           pointerEvents: 'none'
         }}
-      />
-      {/* Vanta background container - always rendered */}
-      <div 
-        id='canvas'
-        ref={netRef} 
-        style={{ 
-          width: '100%', 
-          height: '100vh',
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          zIndex: -2,
-          backgroundColor: '#3a2f6b', // Fallback color if Vanta fails
-          //transition: 'opacity 1s ease-in-out'
-        }}
-      />   
+      /> 
       {children}
     </>
   );

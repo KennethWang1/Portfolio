@@ -17,7 +17,7 @@ export default function Home() {
           />
         </div>
 
-        <div className="relative flex flex-col w-full min-h-screen px-4 md:px-8 max-w-full overflow-x-hidden">
+        <div className="relative flex flex-col w-full px-4 md:px-8 max-w-full overflow-x-hidden">
           <div className="flex flex-col md:flex-row md:items-stretch justify-around w-full gap-4 md:gap-2">
             <DivCreator content={
               <>
