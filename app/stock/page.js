@@ -7,27 +7,33 @@ import Footer from '../_components/Footer.js';
 export default function StockTradingAI() {
   const [stats, setStats] = useState(null);
 
-  // Mock data
-  const mockStats = {
-    netProfit: 12180.25,
-    totalCapital: 125000.00,
-    lastAction: new Date().toISOString(),
-    lastActionType: 'BUY',
-    lastActionAmount: 100,
-    lastReturn: 245.75,
-    lastActionValue:'0.5',
-    lastReward:'0.5',
-    ticker: 'AAPL',
-    lastUpdated: new Date().toISOString(),
-    valuesLast30: [120000, 121500, 119800, 122300, 123100, 121900, 124200, 125800, 124500, 126200, 127100, 125900, 128300, 127800, 129200, 128700, 130100, 129600, 131200, 130800, 132400, 131900, 133500, 132800, 134200, 133700, 135100, 134600, 136000, 125000],
-    traderLast30: [100000, 101200, 99800, 102100, 102900, 101700, 103800, 105200, 104100, 105900, 106700, 105500, 107800, 107300, 108600, 108100, 109400, 108900, 110600, 110100, 111800, 111300, 113000, 112300, 113700, 113200, 114800, 114300, 115900, 112180.25]
-  };
+  async function fetchStats() {
+    try {
+      const response = await fetch('https://a0528fb62d95.ngrok-free.app/api/v1/results?ticker=AMD%20TRT', {
+        headers: {
+          'ngrok-skip-browser-warning': 'true',
+          'Content-Type': 'application/json',
+        }
+      });
+      
+      console.log(response.clone());
+      
+      if (!response.ok) {
+        throw new Error(`Network response was not ok: ${response.status}`);
+      }
+      
+      const data = await response.json();
+      console.log(data);
+      setStats(data);
+      return data;
+    } catch (error) {
+      console.error('Error fetching stats:', error);
+      setStats({});
+    }
+  }
 
   useEffect(() => {
-    // Simulate API call
-    setTimeout(() => {
-      setStats(mockStats);
-    }, 1000);
+    fetchStats();
   }, []);
 
   if (!stats) {
@@ -54,34 +60,34 @@ export default function StockTradingAI() {
           <div className="mb-8">
             <h1 className="text-4xl font-bold text-green-50/[0.9] mb-2">Stock Trading AI Dashboard</h1>
             <p className="text-green-50/[0.7]">Performance metrics</p>
-            <p className="text-sm text-green-50/[0.5]">Last updated: {new Date(stats.lastUpdated).toLocaleString()}</p>
+            <p className="text-sm text-green-50/[0.5]">Last updated: {stats.lastUpdated ? new Date(stats.lastUpdated).toLocaleString() : 'N/A'}</p>
           </div>
 
         {/* Key Metrics Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-          <StatCard title="Total Capital" value={`$${stats.totalCapital.toLocaleString()}`} color="blue" />
-          <StatCard title="Net Profit" value={`$${stats.netProfit.toLocaleString()}`} color="green" />
-          <StatCard title="Last Return" value={`$${stats.lastReturn.toLocaleString()}`} color="green" />
-          <StatCard title="Last Action" value={stats.lastActionType} color="purple" />
+          <StatCard title="Total Capital" value={`$${(stats.totalCapital || 0).toLocaleString()}`} color="blue" />
+          <StatCard title="Net Profit" value={`$${(stats.netProfit || 0).toLocaleString()}`} color="green" />
+          <StatCard title="Last Return" value={`$${(stats.lastReturn || 0).toLocaleString()}`} color="green" />
+          <StatCard title="Last Action" value={stats.lastActionType || 'N/A'} color="purple" />
         </div>
 
         {/* Detailed Statistics */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
           <DetailCard title="Trading Information">
             <div className="space-y-3">
-              <StatRow label="Last Ticker" value={stats.ticker} color="green" />
-              <StatRow label="Last Action Type" value={stats.lastActionType} color="blue" />
-              <StatRow label="Last Return" value={`$${stats.lastReturn.toLocaleString()}`} color="green" />
-              <StatRow label="Last Action Amount" value={`$${stats.lastActionAmount.toLocaleString()}`} />
+              <StatRow label="Last Ticker" value={stats.ticker || 'N/A'} color="green" />
+              <StatRow label="Last Action Type" value={stats.lastActionType || 'N/A'} color="blue" />
+              <StatRow label="Last Return" value={`$${(stats.lastReturn || 0).toLocaleString()}`} color="green" />
+              <StatRow label="Last Action Amount" value={`$${(stats.lastActionAmount || 0).toLocaleString()}`} />
             </div>
           </DetailCard>
 
           <DetailCard title="AI Performance">
             <div className="space-y-3">
-              <StatRow label="Total Capital" value={`$${stats.totalCapital.toLocaleString()}`} />
-              <StatRow label="Net Profit" value={`$${stats.netProfit.toLocaleString()}`} color="green" />
-              <StatRow label="Last Action Value" value={stats.lastActionValue} color="purple" />
-              <StatRow label="Last Reward" value={stats.lastReward} color="purple" />
+              <StatRow label="Total Capital" value={`$${(stats.totalCapital || 0).toLocaleString()}`} />
+              <StatRow label="Net Profit" value={`$${(stats.netProfit || 0).toLocaleString()}`} color="green" />
+              <StatRow label="Last Action Value" value={stats.lastActionValue || 'N/A'} color="purple" />
+              <StatRow label="Last Reward" value={stats.lastReward || 'N/A'} color="purple" />
             </div>
           </DetailCard>
         </div>
@@ -156,7 +162,7 @@ function StatRow({ label, value, color = "default" }) {
 }
 
 function PerformanceChart({ stockValues, portfolioValues }) {
-  if (!stockValues.length || !portfolioValues.length) {
+  if (!stockValues || !portfolioValues || !stockValues.length || !portfolioValues.length) {
     return (
       <div className="h-64 flex items-center justify-center text-green-50/[0.6]">
         No data available for the last 30 days
