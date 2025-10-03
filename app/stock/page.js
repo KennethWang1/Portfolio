@@ -9,7 +9,7 @@ export default function StockTradingAI() {
 
   async function fetchStats() {
     try {
-      const response = await fetch('https://complete-seagull-pet.ngrok-free.app/api/v1/results?ticker=AMD%20TRT', {
+      const response = await fetch('https://complete-seagull-pet.ngrok-free.app/api/v1/results?ticker=ENB%20TRT', {
         headers: {
           'ngrok-skip-browser-warning': 'true',
           'Content-Type': 'application/json',
