@@ -174,21 +174,25 @@ function PerformanceChart({ stockValues, portfolioValues }) {
   const chartHeight = 60; // Use percentage-based height
   const padding = 8;
 
+  // Reverse the arrays to show newest data on the left
+  const reversedStockValues = [...stockValues].reverse();
+  const reversedPortfolioValues = [...portfolioValues].reverse();
+
   // Get min/max values for scaling
-  const allValues = [...stockValues, ...portfolioValues];
+  const allValues = [...reversedStockValues, ...reversedPortfolioValues];
   const minValue = Math.min(...allValues);
   const maxValue = Math.max(...allValues);
   const valueRange = maxValue - minValue;
 
   // Create points for both lines
-  const stockPoints = stockValues.map((value, index) => {
-    const x = padding + (index / (stockValues.length - 1)) * (chartWidth - 2 * padding);
+  const stockPoints = reversedStockValues.map((value, index) => {
+    const x = padding + (index / (reversedStockValues.length - 1)) * (chartWidth - 2 * padding);
     const y = chartHeight - padding - ((value - minValue) / valueRange) * (chartHeight - 2 * padding);
     return `${x},${y}`;
   }).join(' ');
 
-  const portfolioPoints = portfolioValues.map((value, index) => {
-    const x = padding + (index / (portfolioValues.length - 1)) * (chartWidth - 2 * padding);
+  const portfolioPoints = reversedPortfolioValues.map((value, index) => {
+    const x = padding + (index / (reversedPortfolioValues.length - 1)) * (chartWidth - 2 * padding);
     const y = chartHeight - padding - ((value - minValue) / valueRange) * (chartHeight - 2 * padding);
     return `${x},${y}`;
   }).join(' ');
@@ -236,7 +240,7 @@ function PerformanceChart({ stockValues, portfolioValues }) {
             );
           })}
           
-          {/* X-axis labels */}
+          {/* X-axis labels - now showing most recent on the left */}
           {[0, 7, 14, 21, 29].map((day) => {
             const x = padding + (day / 29) * (chartWidth - 2 * padding);
             return (
@@ -248,7 +252,7 @@ function PerformanceChart({ stockValues, portfolioValues }) {
                 className="fill-green-50/[0.6]"
                 fontSize="2"
               >
-                {30 - day}d
+                {day === 0 ? 'Today' : `${day}d ago`}
               </text>
             );
           })}
