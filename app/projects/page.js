@@ -31,7 +31,9 @@ export default function Projects() {
                     <div className="flex flex-row flex-wrap items-center justify-center">
                         <ProjectDiv link = 'https://google.com' title = 'ResuMade' content = ''/>
                         <ProjectDiv link = 'https://google.com' title = '' content = ''/>
-                        <ProjectDiv link = 'https://google.com' title = '' content = '' tools = {[{"tool":"test","color":"bg-red-300"}]}/>
+                        <ProjectDiv link = 'https://google.com' title = '' content = '' tools = {[
+                            
+                        ]}/>
                     </div>
                 </div>
             </div>
