@@ -10,11 +10,14 @@ export default function Home() {
     <>
       <Header/>
       <div className="flex flex-col">
-        <div className="flex w-full justify-center items-center" style={{ height: 'calc(100vh - 5rem)' }}>
+        <div className="flex flex-col w-full justify-center items-center" style={{ height: 'calc(100vh - 5rem)' }}>
           <TypewriterTitle
             text="Hello&#128075; I'm Kenneth!"
             className="relative text-foreground text-6xl h-10 w-200 text-center p-2.5 m-10 mt-0 align-middle"
           />
+          <h1 className="text-4xl text-[hsla(0,0%,40%,50%)]">v</h1>
+          <h2 className="text-2xl text-[hsla(0,0%,30%,50%)]">v</h2>
+          <h3 className="text-xl text-[hsla(0,0%,20%,50%)]">v</h3>
         </div>
 
         <div className="relative flex flex-col w-full px-4 md:px-8 max-w-300 overflow-x-hidden m-auto">

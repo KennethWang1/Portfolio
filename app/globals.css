@@ -89,45 +89,64 @@ html::-webkit-scrollbar-thumb:hover, body::-webkit-scrollbar-thumb:hover {
   background: var(--foreground);
 }
 
-/* Potential Vanta canvas override - try to force line colors */
 canvas[data-vanta-canvas] {
   filter: hue-rotate(0deg) !important;
   mix-blend-mode: normal !important;
 }
 
-/* Header gradient fallback */
 header.gradient-header {
   background: linear-gradient(to bottom, var(--color-background) 0%, var(--color-background) 70%, transparent 100%);
 }
 
-/* Prevent over-scrolling and bouncing */
 html {
   overscroll-behavior: none;
   scroll-behavior: smooth;
 }
 
-/* Ensure main content fills viewport and prevents over-scroll */
 #main {
   min-height: 100vh;
   position: relative;
   overscroll-behavior: none;
 }
 
-/* Additional constraint for the entire page */
 body {
   overscroll-behavior-y: none;
   -webkit-overflow-scrolling: touch;
 }
 
-/* Enhanced text overflow prevention */
 .overflow-wrap-anywhere {
   overflow-wrap: anywhere;
   word-break: break-word;
   hyphens: auto;
 }
 
-/* Ensure links and inline elements also wrap properly */
 a {
   word-break: break-all;
   overflow-wrap: anywhere;
+}
+
+.scrollbar-transparent-track {
+  scrollbar-width: auto;
+  scrollbar-color: auto;
+}
+
+.scrollbar-transparent-track::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+  background: transparent;
+}
+
+.scrollbar-transparent-track::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-transparent-track::-webkit-scrollbar-thumb {
+  background: var(--foreground);
+  border-radius: 3px;
+}
+
+.scrollbar-transparent-track::-webkit-scrollbar-button {
+  display: none;
+  width: 0;
+  height: 0;
 }
