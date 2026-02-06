@@ -9,10 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/material": "^7.3.7",
+    "@mui/x-charts": "^8.27.0",
     "autoprefixer": "^10.4.21",
     "framer-motion": "^12.9.1",
     "github-calendar": "^2.3.4",
-    "next": "15.3.1",
+    "next": "^15.5.12",
     "postcss": "^8.5.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

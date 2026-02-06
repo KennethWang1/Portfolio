@@ -10,8 +10,8 @@ export const metadata = {
 
 const Layout = ({ children }) => {
 return (
-    <html lang="en" style={{ backgroundColor: '#3a2f6b' }}>
-        <body style={{ backgroundColor: '#3a2f6b' }}>
+    <html lang="en" style={{ backgroundColor: '#050A1F' }}>
+        <body style={{ backgroundColor: '#050A1F' }}>
             <ScrollConstraint />
             <NetBackground>
                 <main id="main" style={{ position: 'relative', zIndex: 1 }}>

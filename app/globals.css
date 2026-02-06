@@ -2,7 +2,7 @@
 @import "tailwindcss";
 
 html {
-  background-color: #3a2f6b;
+  background-color: #050A1F;
   transition: background-color 0.5s ease-out;
 }
 
@@ -11,8 +11,12 @@ html.vanta-loaded {
 }
 
 :root {
-  --background: #3a2f6b;
-  --foreground: #77f07f;
+  --background: #050A1F;
+  --foreground: #00FF41;
+}
+
+b{
+  color: hsl(135.3, 75%, 50%)
 }
 
 @theme inline {
@@ -27,8 +31,8 @@ html.vanta-loaded {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #3a2f6b;
-    --foreground: #77f07f;
+    --background: #050A1F;
+    --foreground: #00FF41;
   }
 }
 
@@ -43,7 +47,7 @@ html, body {
 body {
   @apply font-sans;
   background-color: var(--color-background);
-  color: var(--foreground);
+  color: var(--color-foreground);
   font-family: 'Roboto', Helvetica, sans-serif;
   margin: 0;
   padding: 0;

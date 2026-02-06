@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useRef, useState, useCallback } from 'react';
 
-let dots = 200;
+let dots = 50;
 const ldist = 200;
 const mouseInfluenceRadius = 300;
 let points = [];
@@ -14,13 +14,16 @@ const NetBackground = ({ children }) => {
   const pointsRef = useRef([]);
   const mouseRef = useRef({ x: 0, y: 0 });
 
+
   const animate = useCallback(() => {
     const canvas = canvasRef.current;
+    if (canvas.width < canvas.height) dots = 15;
+    else dots = Math.floor((canvas.width * canvas.height) / 10000);
+    console.log(dots);
     if (!canvas) return;
     
     const ctx = canvas.getContext("2d");
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    dots = Math.floor(Math.sqrt(canvas.width * canvas.height) / 15);
 
     const mouse = mouseRef.current;
 
