@@ -29,10 +29,11 @@ export default function Projects() {
                         ]}/>
                     </div>
                     <div className="flex flex-row flex-wrap items-center justify-center">
-                        <ProjectDiv link = 'https://google.com' title = 'ResuMade' content = ''/>
+                        <ProjectDiv link = 'https://github.com/KennethWang1/Stock-AI' title = 'Stock AI' content = '' tools = {[
+                            
+                        ]}/>
                         <ProjectDiv link = 'https://google.com' title = '' content = ''/>
                         <ProjectDiv link = 'https://google.com' title = '' content = '' tools = {[
-                            
                         ]}/>
                     </div>
                 </div>
