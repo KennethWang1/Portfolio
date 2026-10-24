@@ -24,11 +24,11 @@ export default function Home() {
           <div className="flex flex-col md:flex-row md:items-stretch justify-around w-full gap-4 md:gap-2">
             <DivCreator content={
               <p>
-                Nice to meet you! My name is Kenneth, and I am a Canadian high school student studying at William Lyon Mackenzie. In my spare time, I enjoy working on projects (which you can see in the projects page)! 
+                Nice to meet you! My name is Kenneth, and I am currently getting a bachelor's of <b>computer science and finance</b> at the <b>University of Waterloo</b>. In my spare time, I enjoy working on projects (which you can see in the <a href = "./projects">projects page</a>)! 
                 <br/><br/>
-                I am a self-taught programmer fluent in <b>C++</b>, <b>Java</b>, and <b>JavaScript</b>. I also use several frameworks and libraries, such as <b>Node.js</b>. Some other languages, frameworks, tools, and libraries I am learning or have some knowledge of include <b>SQL</b>, <b>docker</b>, <b>React</b>, <b>Tailwind</b>, <b>Next.js</b>, <b>Python</b>, <b>TensorFlow</b> and <b>Flask</b>. 
+                I am a self-taught programmer fluent in <b>C++</b>, <b>Java</b>, and <b>JavaScript</b>. I also use several frameworks and libraries, such as <b>Node.js</b>, <b>React.js</b>, and <b>TypeScript</b>. Some other languages, frameworks, tools, and libraries I am learning or have some knowledge of include <b>SQL</b>, <b>docker</b> and <b>docker compose</b>, <b>Tailwind</b>, <b>Next.js</b>, <b>Python</b>, <b>TensorFlow</b> and <b>Flask</b>. 
                 <br/><br/>
-                Recently, I've been focusing on web development and machine learning. I am learning to use better practices when creating web app. I am also learning machine learning concepts and how to properly implement them into projects.
+                Recently, I've been focusing on web development, machine learning, and finance. I am learning machine learning concepts and how to properly implement them into projects. I also want to work on more projects involving finance.
               </p>
               } className="w-full md:basis-512" title="About Me" file = "aboutMe.md"/>
           </div>

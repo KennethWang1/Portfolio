@@ -15,6 +15,26 @@ export default function Projects() {
                             {"tool":"JavaScript", "color":"bg-yellow-300"},
                             {"tool":"Tailwind", "color":"bg-sky-300"}
                         ]}/>
+                        <ProjectDiv link = 'https://github.com/KennethWang1/Stock-AI' title = 'Stock AI' content = 'A neural network-based stock trading algorithm. At the end of the trading day, it gets all relvent stock data as well as news data and trains based on that.' img = './stock-ai.png' tools = {[
+                            {"tool":"Python", "color":"bg-blue-500"},
+                            {"tool":"Flask", "color":"bg-sky-400"},
+                            {"tool":"TensorFlow", "color":"bg-orange-500"}
+                        ]}/>
+                        <ProjectDiv link = 'https://ctf.mcpt.ca' title = 'Ethical Hacking Site' content = 'A platform for practicing ethical hacking skills in a safe environment.' img = '/Rest Image.jpg' tools = {[
+                            {"tools":"Python", "color":"bg-blue-500"},
+                            {"tool":"JavaScript", "color":"bg-yellow-300"},
+                            {"tool":"DJango", "color":"white"},
+                            {"tool":"docker", "color":"bg-blue-600"},
+                            {"tool":"caddy", "color":"bg-green-400"},
+                            {"tool":"Digital Ocean", "color":"bg-blue-700"}
+                        ]}/>
+                    </div>
+                    <div className="flex flex-row flex-wrap items-center justify-center">
+                        <ProjectDiv link = 'https://github.com/KennethWang1/Disease-Heatmap' title = 'Disease Heatmap' content = 'A anonymous crowd-sourced disease tracking app. It uses self-reported data to track what diseases people are getting in the area.' img = 'disease heatmap.jpg' tools={[
+                            {"tool":"React Native", "color":"bg-blue-500"},
+                            {"tool":"Node.js", "color":"bg-green-500"},
+                            {"tool":"MongoDB", "color":"bg-green-700"},
+                        ]}/>
                         <ProjectDiv link = 'https://github.com/KennethWang1/Wildlife-Go' title='Wildlife Go' content='A web-based wildlife photography game to encourage going outside.' img = '/Wildlife-Go Image.jpg' tools = {[
                             {"tool":"JavaScript", "color":"bg-yellow-300"},
                             {"tool":"Tailwind", "color":"bg-sky-500"},
@@ -27,18 +47,6 @@ export default function Projects() {
                             {"tool":"JavaScript", "color":"bg-yellow-300"},
                             {"tool":"Flask", "color":"bg-sky-400"},
                             {"tool":"OpenAI", "color":"bg-gray-300"}
-                        ]}/>
-                    </div>
-                    <div className="flex flex-row flex-wrap items-center justify-center">
-                        <ProjectDiv link = 'https://github.com/KennethWang1/Stock-AI' title = 'Stock AI' content = 'A neural network-based stock trading algorithm. At the end of the trading day, it gets all relvent stock data as well as news data and trains based on that.' img = './stock-ai.png' tools = {[
-                            {"tool":"Python", "color":"bg-blue-500"},
-                            {"tool":"Flask", "color":"bg-sky-400"},
-                            {"tool":"TensorFlow", "color":"bg-orange-500"}
-                        ]}/>
-                        <ProjectDiv link = 'https://github.com/KennethWang1/Disease-Heatmap' title = 'Disease Heatmap' content = 'A anonymous crowd-sourced disease tracking app. It uses self-reported data to track what diseases people are getting in the area.' img = 'disease heatmap.jpg' tools={[
-                            {"tool":"React Native", "color":"bg-blue-500"},
-                            {"tool":"Node.js", "color":"bg-green-500"},
-                            {"tool":"MongoDB", "color":"bg-green-700"},
                         ]}/>
                     </div>
                 </div>
