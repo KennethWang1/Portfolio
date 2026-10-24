@@ -23,7 +23,7 @@ export default function Projects() {
                         <ProjectDiv link = 'https://ctf.mcpt.ca' title = 'Ethical Hacking Site' content = 'A platform for practicing ethical hacking skills in a safe environment.' img = '/Rest Image.jpg' tools = {[
                             {"tools":"Python", "color":"bg-blue-500"},
                             {"tool":"JavaScript", "color":"bg-yellow-300"},
-                            {"tool":"DJango", "color":"white"},
+                            {"tool":"DJango", "color":"bg-white"},
                             {"tool":"docker", "color":"bg-blue-600"},
                             {"tool":"caddy", "color":"bg-green-400"},
                             {"tool":"Digital Ocean", "color":"bg-blue-700"}
