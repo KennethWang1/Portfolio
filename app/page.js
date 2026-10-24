@@ -24,7 +24,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row md:items-stretch justify-around w-full gap-4 md:gap-2">
             <DivCreator content={
               <p>
-                Nice to meet you! My name is Kenneth, and I am currently getting a bachelor's of <b>computer science and finance</b> at the <b>University of Waterloo</b>. In my spare time, I enjoy working on projects (which you can see in the <a href = "./projects">projects page</a>)! 
+                Nice to meet you! My name is Kenneth, and I am currently getting a bachelor's of <b>Computer Science and Finance</b> at the <b>University of Waterloo</b>. In my spare time, I enjoy working on projects (which you can see in the <a href = "./projects">projects page</a>)! 
                 <br/><br/>
                 I am a self-taught programmer fluent in <b>C++</b>, <b>Java</b>, and <b>JavaScript</b>. I also use several frameworks and libraries, such as <b>Node.js</b>, <b>React.js</b>, and <b>TypeScript</b>. Some other languages, frameworks, tools, and libraries I am learning or have some knowledge of include <b>SQL</b>, <b>docker</b> and <b>docker compose</b>, <b>Tailwind</b>, <b>Next.js</b>, <b>Python</b>, <b>TensorFlow</b> and <b>Flask</b>. 
                 <br/><br/>
